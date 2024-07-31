@@ -171,6 +171,10 @@ css_slider_hide_number = """
         display: block;
         width: 100%;
     }
+    
+    a[class^="vieverBadge_"] {
+    display: none;
+    }
 </style>
 """
 
