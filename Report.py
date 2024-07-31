@@ -172,6 +172,10 @@ css_slider_hide_number = """
         width: 100%;
     }
     
+    .viewerBadge_container__r5tak {
+        display: block;
+    }
+    
     [class^="vieverBadge_"] {
     display: none;
     }
