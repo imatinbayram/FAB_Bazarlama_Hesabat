@@ -41,14 +41,14 @@ data['CƏMİ'] = data[hesabat_aylar].sum(axis=1)
 
 
 #sidebar secimleri
-SELECT_GROUP = st.sidebar.selectbox(':white[:no-background[Bölgə]]', sorted(group_list),
+SELECT_GROUP = st.sidebar.selectbox(':white[Bölgə]', sorted(group_list),
                                     label_visibility='visible')
-SELECT_S_AD = st.sidebar.selectbox(':white[:no-background[Müştəri adı]]',
+SELECT_S_AD = st.sidebar.selectbox(':white[Müştəri adı]',
                                    sorted(group_cari_ad[SELECT_GROUP]),
                                    label_visibility='visible')
-SELECT_QOL = st.sidebar.selectbox(':white[:no-background[Satış qolu]]', qol_list,
+SELECT_QOL = st.sidebar.selectbox(':white[Satış qolu]', qol_list,
                                   label_visibility='visible')
-TOP_NUMBER = st.sidebar.slider(':white[:no-background[TOP satılan mallar]]', 0, 500, 250, 50)
+TOP_NUMBER = st.sidebar.slider(':white[TOP satılan mallar]', 0, 500, 250, 50)
 
 # TOP satış mallarinin siyahisi
 top_sales_products = data.groupby('S_KOD')['CƏMİ'].sum().reset_index()
