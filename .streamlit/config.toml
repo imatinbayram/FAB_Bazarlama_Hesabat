@@ -3,5 +3,5 @@ showErrorDetails = false
 
 [theme]
 base="dark"
-primaryColor = "blue"
-backgroundColor = "black"
+primaryColor="#574af9"
+backgroundColor="#000b16"
