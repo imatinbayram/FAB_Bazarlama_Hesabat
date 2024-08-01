@@ -180,12 +180,12 @@ css_slider_hide_number = """
         display: none;
     }
     
-    [data-testid="stToolbar"] {
-        visibility: hidden !important;
+    #MainMenu {
+    visibility: hidden;
     }
-            
+    
     footer {
-        visibility: hidden !important;
+        visibility: hidden;
     }
 </style>
 """
