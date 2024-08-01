@@ -179,7 +179,7 @@ css_slider_hide_number = """
         display: none;
     }
     
-    [class="viewerBadge_container__r5tak"] {
+    [class="viewerBadge_link__qRIco"] {
         display: none;
     }
 </style>
