@@ -63,6 +63,7 @@ st.header(f'{SELECT_GROUP} - {SELECT_S_AD} -  {SELECT_QOL}', divider='rainbow', 
 tab2, tab1 = st.tabs([':file_folder: Qollar üzrə mallar',':file_folder: Bütün satdığı mallar'])
 
 #sidebara gore umumi cedvelin yaradilmasi
+#cədvəli düzəldirik
 select_data = data[(data['GROUP']==SELECT_GROUP) & (data['C_AD']==SELECT_S_AD)]
 filter_data_all_column = select_data.drop(['GROUP','C_KOD','C_AD','S_AD'], axis=1)
 #filter_data aylari gosterib gostermemeye gore uygunlasdiririq
@@ -86,8 +87,8 @@ filter_secilmis_radio_options = {
     'Bütün': 0,
     'Satılan': 1,
     'Satılmayan': 2,
-    ':red[TOP] Satılan': 3,
-    ':red[TOP] Satılmayan': 4
+    f':red[TOP {TOP_NUMBER}] Satılan': 3,
+    f':red[TOP {TOP_NUMBER}] Satılmayan': 4
 }
 filter_secilmis_radio_select = tab2.radio(
     label = '',
