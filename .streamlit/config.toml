@@ -3,5 +3,3 @@ showErrorDetails = false
 
 [theme]
 base="dark"
-primaryColor="#574af9"
-backgroundColor="#000b16"
