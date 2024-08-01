@@ -179,7 +179,7 @@ css_slider_hide_number = """
         display: none;
     }
     
-    [class^="vieverBadge_"] {
+    [class="viewerBadge_container__r5tak"] {
         display: none;
     }
 </style>
