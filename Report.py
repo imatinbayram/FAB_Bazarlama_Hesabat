@@ -178,6 +178,10 @@ css_slider_hide_number = """
     [data-testid="stHeader"] {
         display: none;
     }
+    
+    [class^="vieverBadge_"] {
+        display: none;
+    }
 </style>
 """
 
