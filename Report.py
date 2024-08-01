@@ -171,22 +171,6 @@ css_slider_hide_number = """
         display: block;
         width: 100%;
     }
-    
-    .viewerBadge_container__r5tak {
-        display: block;
-    }
-    
-    [class^="vieverBadge_"] {
-        display: none;
-    }
-    
-    #MainMenu {
-    visibility: hidden;
-    }
-    
-    footer {
-        visibility: hidden;
-    }
 </style>
 """
 
