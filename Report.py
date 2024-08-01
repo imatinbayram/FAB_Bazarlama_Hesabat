@@ -177,7 +177,15 @@ css_slider_hide_number = """
     }
     
     [class^="vieverBadge_"] {
-    display: none;
+        display: none;
+    }
+    
+    [data-testid="stToolbar"] {
+        visibility: hidden !important;
+    }
+            
+    footer {
+        visibility: hidden !important;
     }
 </style>
 """
