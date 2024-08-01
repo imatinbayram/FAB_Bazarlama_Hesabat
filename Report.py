@@ -11,7 +11,10 @@ st.set_page_config(
     page_title='FAB Bazarlama Hesabat',
     page_icon='logo.png',
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    menu_items={
+        'About': "# FAB Bazarlama Hesabat. Bu hesabat FAB şirkətlər qrupu üçün hazırlanmışdır. *Bazarlama*"
+    }
 )
 
 #Excel melumati oxuyuruq
