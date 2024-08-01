@@ -174,6 +174,10 @@ css_slider_hide_number = """
         display: block;
         width: 100%;
     }
+
+    [data-testid="stHeader"] {
+        display: none;
+    }
 </style>
 """
 
