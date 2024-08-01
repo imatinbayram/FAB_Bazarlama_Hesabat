@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'About': "# FAB Bazarlama Hesabat. Bu hesabat FAB şirkətlər qrupu üçün hazırlanmışdır. *Bazarlama*"
+        'About': "red:[FAB Bazarlama Hesabat. Bu hesabat FAB şirkətlər qrupu üçün hazırlanmışdır.]"
     }
 )
 
