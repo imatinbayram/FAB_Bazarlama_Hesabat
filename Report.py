@@ -61,7 +61,7 @@ top_sales_products_list = top_sales_products.iloc[:TOP_NUMBER, 0].tolist()
 #Sehifenin adini tablari duzeldirik
 st.header(f'{SELECT_GROUP} - {SELECT_S_AD} -  {SELECT_QOL}', divider='rainbow', anchor=False)
 #tab2, tab1 = st.tabs([':file_folder: Qollar üzrə mallar',':file_folder: Bütün satdığı mallar'])
-tab2 = st.tab([':file_folder: Qollar üzrə mallar'])
+#tab2 = st.tabs([':file_folder: Qollar üzrə mallar'])
 
 #sidebara gore umumi cedvelin yaradilmasi
 #cədvəli düzəldirik
@@ -91,7 +91,7 @@ filter_secilmis_radio_options = {
     f':red[TOP {TOP_NUMBER}] Satılan': 3,
     f':red[TOP {TOP_NUMBER}] Satılmayan': 4
 }
-filter_secilmis_radio_select = tab2.radio(
+filter_secilmis_radio_select = st.radio(
     label = '',
     label_visibility = 'collapsed',
     options = list(filter_secilmis_radio_options.keys()),
@@ -137,7 +137,7 @@ output = BytesIO()
 with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
     styled_secilmis_mallar.to_excel(writer, index=False, sheet_name='Hesabat')
 excel_data = output.getvalue()
-tab2.download_button(
+st.download_button(
     label=":green[Cədvəli Excel'ə yüklə] :floppy_disk:",
     data=excel_data,
     file_name=f'{SELECT_GROUP} - {SELECT_S_AD} - {SELECT_QOL}.xlsx',
@@ -145,7 +145,7 @@ tab2.download_button(
 
 #Tablarda dizayn olunmus cedvellerin gosterilmesi
 #tab1.table(styled_filter_data)
-tab2.table(styled_secilmis_mallar)
+st.table(styled_secilmis_mallar)
 
 _comment = '''
 #DataFrame olsa download knopkasini yoxa cixardiriq
