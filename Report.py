@@ -60,7 +60,8 @@ top_sales_products_list = top_sales_products.iloc[:TOP_NUMBER, 0].tolist()
 
 #Sehifenin adini tablari duzeldirik
 st.header(f'{SELECT_GROUP} - {SELECT_S_AD} -  {SELECT_QOL}', divider='rainbow', anchor=False)
-tab2, tab1 = st.tabs([':file_folder: Qollar üzrə mallar',':file_folder: Bütün satdığı mallar'])
+#tab2, tab1 = st.tabs([':file_folder: Qollar üzrə mallar',':file_folder: Bütün satdığı mallar'])
+tab2 = st.tabs([':file_folder: Qollar üzrə mallar'])
 
 #sidebara gore umumi cedvelin yaradilmasi
 #cədvəli düzəldirik
@@ -143,7 +144,7 @@ tab2.download_button(
 )
 
 #Tablarda dizayn olunmus cedvellerin gosterilmesi
-tab1.table(styled_filter_data)
+#tab1.table(styled_filter_data)
 tab2.table(styled_secilmis_mallar)
 
 _comment = '''
