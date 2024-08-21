@@ -4,7 +4,7 @@ import numpy as np
 from io import BytesIO
 
 #Hesabata daxil olan aylar
-hesabat_aylar = ['Yanvar','Fevral','Mart','Aprel','May','İyun']
+hesabat_aylar = ['Yanvar','Fevral','Mart','Aprel','May','İyun', 'İyul']
 
 #Sehifenin nastroykasi
 st.set_page_config(
@@ -46,7 +46,7 @@ data['CƏMİ'] = data[hesabat_aylar].sum(axis=1)
 #sidebar secimleri
 SELECT_GROUP = st.sidebar.selectbox('Bölgə', sorted(group_list),
                                     label_visibility='visible')
-show_musteri = st.sidebar.checkbox("Müştəri nəzərə alma")
+show_musteri = st.sidebar.checkbox("Bütün müştərilər")
 if show_musteri:
     SELECT_S_AD = 'Bütün müştərilər'
 else:
@@ -132,9 +132,9 @@ styled1_secilmis_mallar = secilmis_mallar.style.format({ay: accounting_format fo
 # TOP satilan mallari sari elemek ucun funksiya
 def top_sold_color(row):
     if row['CƏMİ'] < 0:
-        return ['background-color: green; color:red' if row['S_KOD'] in top_sales_products_list else 'color:red' for _ in row]
+        return ['background-color: #003000; color:red' if row['S_KOD'] in top_sales_products_list else 'color:red' for _ in row]
     else:
-        return ['background-color: green' if row['S_KOD'] in top_sales_products_list else '' for _ in row]
+        return ['background-color: #003000' if row['S_KOD'] in top_sales_products_list else '' for _ in row]
 
 #funksiyani tetbiq edirik
 styled_filter_data = styled1_filter_data.apply(top_sold_color, axis=1)
