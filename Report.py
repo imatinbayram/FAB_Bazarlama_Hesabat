@@ -46,9 +46,9 @@ data['CƏMİ'] = data[hesabat_aylar].sum(axis=1)
 #sidebar secimleri
 SELECT_GROUP = st.sidebar.selectbox('Bölgə', sorted(group_list),
                                     label_visibility='visible')
-show_musteri = st.sidebar.checkbox(":red[Müştəri nəzərə alma]")
+show_musteri = st.sidebar.checkbox("Müştəri nəzərə alma")
 if show_musteri:
-    SELECT_S_AD = None
+    SELECT_S_AD = 'Bütün müştərilər'
 else:
     SELECT_S_AD = st.sidebar.selectbox('Müştəri adı',
                                        sorted(group_cari_ad[SELECT_GROUP]),
@@ -69,7 +69,11 @@ st.header(f'{SELECT_GROUP} - {SELECT_S_AD} -  {SELECT_QOL}', divider='rainbow', 
 
 #sidebara gore umumi cedvelin yaradilmasi
 #cədvəli düzəldirik
-select_data = data[(data['GROUP']==SELECT_GROUP) & (data['C_AD']==SELECT_S_AD)]
+
+if SELECT_S_AD == 'Bütün müştərilər':
+    select_data = data[(data['GROUP']==SELECT_GROUP)]
+else:
+    select_data = data[(data['GROUP']==SELECT_GROUP) & (data['C_AD']==SELECT_S_AD)]
 filter_data_all_column = select_data.drop(['GROUP','C_KOD','C_AD','S_AD'], axis=1)
 #filter_data aylari gosterib gostermemeye gore uygunlasdiririq
 show_aylar = st.sidebar.checkbox("Ancaq :red[CƏMİ] göstər")
