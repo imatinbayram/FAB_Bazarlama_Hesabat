@@ -92,8 +92,8 @@ filter_secilmis_radio_options = {
     f':red[TOP {TOP_NUMBER}] Satılmayan': 4
 }
 filter_secilmis_radio_select = st.radio(
-    label = '',
-    label_visibility = 'hidden',
+    label = 'Menyu',
+    label_visibility = 'collapsed',
     options = list(filter_secilmis_radio_options.keys()),
     horizontal = True
 )
