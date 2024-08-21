@@ -126,8 +126,8 @@ def accounting_format(x):
         return f'{x:,.0f}'.replace(',', ' ')
 
 # Cedvele formati tetbiq edib yeni styled_filter_data yaradiriq
-styled1_filter_data = filter_data.style.format({ay: accounting_format for ay in hesabat_aylar})
-styled1_secilmis_mallar = secilmis_mallar.style.format({ay: accounting_format for ay in hesabat_aylar})
+styled1_filter_data = filter_data.style.format({ay: accounting_format for ay in hesabat_aylar+['CƏMİ']})
+styled1_secilmis_mallar = secilmis_mallar.style.format({ay: accounting_format for ay in hesabat_aylar+['CƏMİ']})
 
 # TOP satilan mallari sari elemek ucun funksiya
 def top_sold_color(row):
