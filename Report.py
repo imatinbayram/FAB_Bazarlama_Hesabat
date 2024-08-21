@@ -46,9 +46,13 @@ data['CƏMİ'] = data[hesabat_aylar].sum(axis=1)
 #sidebar secimleri
 SELECT_GROUP = st.sidebar.selectbox('Bölgə', sorted(group_list),
                                     label_visibility='visible')
-SELECT_S_AD = st.sidebar.selectbox('Müştəri adı',
-                                   sorted(group_cari_ad[SELECT_GROUP]),
-                                   label_visibility='visible')
+show_musteri = st.sidebar.checkbox(":red[Müştəri nəzərə alma]")
+if show_musteri:
+    SELECT_S_AD = '*'
+else:
+    SELECT_S_AD = st.sidebar.selectbox('Müştəri adı',
+                                       sorted(group_cari_ad[SELECT_GROUP]),
+                                       label_visibility='visible')
 SELECT_QOL = st.sidebar.selectbox('Satış qolu', qol_list,
                                   label_visibility='visible')
 TOP_NUMBER = st.sidebar.slider('TOP satılan mallar', 0, 500, 250, 50)
