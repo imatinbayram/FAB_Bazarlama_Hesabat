@@ -93,7 +93,7 @@ filter_secilmis_radio_options = {
 }
 filter_secilmis_radio_select = st.radio(
     label = '',
-    label_visibility = 'collapsed',
+    label_visibility = 'hidden',
     options = list(filter_secilmis_radio_options.keys()),
     horizontal = True
 )
