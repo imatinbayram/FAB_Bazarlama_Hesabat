@@ -48,7 +48,7 @@ SELECT_GROUP = st.sidebar.selectbox('Bölgə', sorted(group_list),
                                     label_visibility='visible')
 show_musteri = st.sidebar.checkbox(":red[Müştəri nəzərə alma]")
 if show_musteri:
-    SELECT_S_AD = '*'
+    SELECT_S_AD = None
 else:
     SELECT_S_AD = st.sidebar.selectbox('Müştəri adı',
                                        sorted(group_cari_ad[SELECT_GROUP]),
