@@ -136,9 +136,10 @@ def top_sold_color(row):
     else:
         return ['background-color: #003000' if row['S_KOD'] in top_sales_products_list else '' for _ in row]
 
-#funksiyani tetbiq edirik
+#funksiyani tetbiq edirik və S_AD S_KOD adlarını düzəldirik
 styled_filter_data = styled1_filter_data.apply(top_sold_color, axis=1)
 styled_secilmis_mallar = styled1_secilmis_mallar.apply(top_sold_color, axis=1)
+styled_secilmis_mallar.rename(columns={'S_KOD': 'STOK KOD', 'S_AD': 'STOK AD'})
 
 #Fayli excele yuklemek
 output = BytesIO()
@@ -153,6 +154,7 @@ st.download_button(
 
 #Tablarda dizayn olunmus cedvellerin gosterilmesi
 #tab1.table(styled_filter_data)
+
 st.table(styled_secilmis_mallar)
 
 _comment = '''
