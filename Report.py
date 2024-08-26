@@ -139,7 +139,6 @@ def top_sold_color(row):
 #funksiyani tetbiq edirik və S_AD S_KOD adlarını düzəldirik
 styled_filter_data = styled1_filter_data.apply(top_sold_color, axis=1)
 styled_secilmis_mallar = styled1_secilmis_mallar.apply(top_sold_color, axis=1)
-styled_secilmis_mallar.rename(columns={'S_KOD': 'STOK KOD', 'S_AD': 'STOK AD'})
 
 #Fayli excele yuklemek
 output = BytesIO()
