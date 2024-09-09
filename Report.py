@@ -4,7 +4,7 @@ import numpy as np
 from io import BytesIO
 
 #Hesabata daxil olan aylar
-hesabat_aylar = ['Yanvar','Fevral','Mart','Aprel','May','İyun', 'İyul']
+hesabat_aylar = ['Yanvar','Fevral','Mart','Aprel','May','İyun', 'İyul', 'Avqust']
 
 #Sehifenin nastroykasi
 st.set_page_config(
