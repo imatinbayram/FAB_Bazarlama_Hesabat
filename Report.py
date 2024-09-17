@@ -158,22 +158,14 @@ st.download_button(
 
 st.table(styled_secilmis_mallar)
 
-_comment = '''
-#DataFrame olsa download knopkasini yoxa cixardiriq
-st.markdown(
-    """
-    <style>
-    [data-testid="stElementToolbar"] {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-'''
-
-css_slider_hide_number = """
+css_page = """
 <style>
+
+    th {
+       color: black;
+       font-weight: bold;
+    }
+        
     .stSlider [data-testid="stTickBar"] {
         display: none;
     }
@@ -195,7 +187,16 @@ css_slider_hide_number = """
     [class="viewerBadge_link__qRIco"] {
         display: none;
     }
+    
+    [data-testid="stElementToolbar"] {
+        display: none;
+    }
+    
+    button[title="View fullscreen"] {
+        visibility: hidden;
+    }
+    
 </style>
 """
 
-st.markdown(css_slider_hide_number, unsafe_allow_html=True)
+st.markdown(css_page, unsafe_allow_html=True)
