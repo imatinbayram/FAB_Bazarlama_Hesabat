@@ -79,8 +79,10 @@ filter_data_all_column = select_data.drop(['GROUP','C_KOD','C_AD','S_AD'], axis=
 show_aylar = st.sidebar.checkbox("Ancaq :red[CƏMİ] göstər")
 if show_aylar:
     filter_data = filter_data_all_column.drop(hesabat_aylar, axis=1)
+    cedvel_sutun = ['CƏMİ']
 else:
     filter_data = filter_data_all_column
+    cedvel_sutun = hesabat_aylar + ['CƏMİ']
     
 filter_data.index = np.arange(1, len(filter_data)+1)
 
@@ -116,8 +118,8 @@ elif filter_secilmis_radio_options[filter_secilmis_radio_select] == 3:
         secilmis_mallar = secilmis_mallar[(secilmis_mallar['CƏMİ']>0) & (secilmis_mallar['S_KOD'].isin(top_sales_products_list))]
 elif filter_secilmis_radio_options[filter_secilmis_radio_select] == 4:
         secilmis_mallar = secilmis_mallar[(secilmis_mallar['CƏMİ']<=0) & (secilmis_mallar['S_KOD'].isin(top_sales_products_list))]
+secilmis_mallar = secilmis_mallar.groupby(['S_KOD','S_AD','QOL'])[cedvel_sutun].sum().reset_index()
 secilmis_mallar.index = np.arange(1, len(secilmis_mallar)+1)
-
 # Cedvelin reqemlerini formatini duzeltmek ucun
 def accounting_format(x):
     if x == 0:
